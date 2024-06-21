@@ -2,8 +2,9 @@ function fibsRec(count) {
 	if(count <= 0) return [];
 	if(count === 1) return [0];
 	if(count === 2) return [0, 1];
-	return fibsRec(count - 1)
-		.concat(fibsRec(count - 1)
+	let recursiveReturn = fibsRec(count - 1);
+	return recursiveReturn
+		.concat(recursiveReturn
 			.slice(-2)
 			.reduce((sum, next) => sum + next));
 }
